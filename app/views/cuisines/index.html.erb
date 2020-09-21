@@ -1,0 +1,33 @@
+<div class = "page">
+  <div class = "header">
+    <div class = "application-title">
+      あなたの食卓を支えるアプリ
+    </div>
+
+    <div class = "header-contents">
+      <%= link_to "ログイン", new_user_session_path, class: "header-content" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "header-content" %> 
+    </div>
+  </div>
+
+  <div class = "body">
+  <%# フォーム部分 %>
+    <div class = random-cuisine>
+      <%= form_with model: @model, local: true do |f| %>
+        <div class = "form-title">カテゴリから料理を探す</div>
+        <%= f.text_area :category, class: "form", placeholder: "カテゴリを選択" %> 
+        <div class = "form-title">食材から料理を提案する</div>
+        <%= f.text_area :foodstaff, class: "form", placeholder: "食材を入力" %>
+        <%= f.submit "料理を提案", class: "button"%>
+      <% end %>
+    </div>
+  <%# 料理表示部分 %>
+    <div>
+
+    <div class = "text1">あなたにおすすめの料理はこれです</div>
+    <div class = "cuisine"><%= link_to "麻婆豆腐", "#" %></div>
+    </div>
+  </div>
+
+</div>
+
