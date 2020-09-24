@@ -1,6 +1,8 @@
 class Cuisine < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :foodstaffs
   belongs_to_active_hash :category
+  has_one_attached :image
 
   with_options presence: true do
     validates :name
@@ -8,7 +10,7 @@ class Cuisine < ApplicationRecord
   
   validates :category_id, numericality: { other_than: 1 }
 
-  def self.search(search)
+  def Cuisine.search(search)
     if search != ""
       Cuisine.where(category_id: "#{search}")
     else

@@ -1,0 +1,13 @@
+<div class = "page">
+    <%= form_with model: @model, class: "form-contents", local: true do |f| %>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+      <%= f.file_field :image %>
+      </div>
+      <%= f.text_area :name, class: "form", placeholder: "料理名" %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form"}) %>
+      <%= f.text_area :recipe, class: "text-form", placeholder: "作り方" %>
+    <% end %>
+</div>

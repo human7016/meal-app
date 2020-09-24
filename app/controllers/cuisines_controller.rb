@@ -1,6 +1,17 @@
 class CuisinesController < ApplicationController
 
   def index
+    @cuisines = Cuisine.search(params[:category_id])
+  end
+
+  def new
+  end
+
+  def create
+  end
+  
+  def show
+    @cuisine = Cuisine.find(params[:id])
   end
 
   def search

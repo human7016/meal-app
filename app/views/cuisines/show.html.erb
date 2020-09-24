@@ -1,0 +1,31 @@
+<div class = "page">
+  <div class = "cuisine-image">
+    <%= image_tag @cuisine.image.variant(resize:'500x500') if @cuisine.image.attached? %>
+  </div>
+  <div class = "cuisine-name" >
+    <%= @cuisine.name %>
+  </div>
+  <div class = "cuisine-category">
+    <%= @cuisine.category.name %> 
+  </div>
+  <%# 栄養価表示部分 %>
+  <div>
+    <ul>
+      <li>タンパク質:<% @cuisine.foodstaff.protein %></li>
+      <li>脂質:<% @cuisine.foodstaff.fat %></li>
+      <li>炭水化物:<% @cuisine.foodstaff.carbohydrate %></li>
+      <li>ビタミンA:<% @cuisine.foodstaff.vitaminA %></li>
+      <li>ビタミンB1:<% @cuisine.foodstaff.vitaminB1 %></li>
+      <li>ビタミンB2:<% @cuisine.foodstaff.vitaminB2 %></li>
+      <li>ビタミンC:<% @cuisine.foodstaff.vitaminC %></li>
+      <li>ビタミンD:<% @cuisine.foodstaff.vitaminD %></li>
+      <li>ナトリウム:<% @cuisine.foodstaff.na %></li>
+      <li>カルシウム:<% @cuisine.foodstaff.ca %></li>
+      <li>鉄:<% @cuisine.foodstaff.fe %></li>
+    </ul>
+  </div>
+  </div class = "cuisine-recipe">
+    <%= @cuisine.recipe %>
+  </div>
+  <%#= @cuisine.foodstaff.%>
+</div>

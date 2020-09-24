@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'cuisines#index'
-  resources :cuisines, only: [:index] do
+  resources :toppages, only: :index
+  root to: 'toppages#index'
+  resources :cuisines, only: [:index, :new, :create, :show] do
     collection do
       get 'search'
     end

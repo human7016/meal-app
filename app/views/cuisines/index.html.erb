@@ -1,26 +1,7 @@
 <div class = "page">
-  <div class = "header">
-    <div class = "application-title">
-      あなたの食卓を支えるアプリ
+  <% @cuisines.each do |cuisine| %>
+    <div class = "cuisine-name">
+      <%= cuisine.name %>
     </div>
-
-    <div class = "header-contents">
-      <%= link_to "ログイン", new_user_session_path, class: "header-content" %>
-      <%= link_to "新規登録", new_user_registration_path, class: "header-content" %> 
-    </div>
-  </div>
-
-  <div class = "body">
-  <%# フォーム部分 %>
-    <div class = random-cuisine>
-      <%= form_with url:search_cuisines_path, method: :get, local: true do |f| %>
-        <div class = "form-title">カテゴリから料理を探す</div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form"}) %>
-        <div class = "form-title">食材から料理を提案する</div>
-        <%= f.text_area :foodstaff, class: "form", placeholder: "食材を入力" %>
-        <%= f.submit "料理を提案", class: "button"%>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
-
