@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_032204) do
+ActiveRecord::Schema.define(version: 2020_09_24_065641) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(version: 2020_09_23_032204) do
   end
 
   create_table "cuisine_foodstuffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "cuisine_id"
-    t.integer "foodstuff_id"
+    t.bigint "foodstuff_id"
+    t.bigint "cuisine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cuisine_id"], name: "index_cuisine_foodstuffs_on_cuisine_id"
+    t.index ["foodstuff_id"], name: "index_cuisine_foodstuffs_on_foodstuff_id"
   end
 
   create_table "cuisines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

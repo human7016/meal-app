@@ -2,14 +2,14 @@
 <div class = "page">
   <div class = "text1">あなたにおすすめの料理はこれです</div>
   <div class = "cuisine"><%= link_to @cuisine.name, cuisine_path(@cuisine.id) %></div>
-  
+
   他の料理を検索する
 <%# 再検索部分%>
   <%= form_with url:search_cuisines_path, method: :get, local: true do |f| %>
     <div class = "form-title">カテゴリから料理を探す</div>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form"}) %>
     <div class = "form-title">食材から料理を提案する</div>
-    <%= f.text_area :foodstaff, class: "form", placeholder: "食材を入力" %>
+    <%= f.text_area :foodstuff, class: "form", placeholder: "食材を入力" %>
     <%= f.submit "料理を提案", class: "button"%>
   <% end %>
 </div>

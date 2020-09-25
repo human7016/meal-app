@@ -17,7 +17,7 @@
         <div class = "form-title">カテゴリから料理を探す</div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form"}) %>
         <div class = "form-title">食材から料理を提案する</div>
-        <%= f.text_area :foodstaff, class: "form", placeholder: "食材を入力" %>
+        <%= f.text_area :foodstuff, class: "form", placeholder: "食材を入力" %>
         <%= f.submit "料理を提案", class: "button"%>
       <% end %>
     </div>
@@ -27,7 +27,7 @@
         <div class = "form-title">カテゴリを選択して検索</div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class: "form"}) %>
         <div class = "form-title">食材から検索</div>
-        <%= f.text_area :foodstaff, class: "form", placeholder: "食材を入力" %>
+        <%= f.text_area :foodstuff, class: "form", placeholder: "食材を入力" %>
         <%= f.submit "料理一覧を表示", class: "button"%>
       <% end %>
     </div>

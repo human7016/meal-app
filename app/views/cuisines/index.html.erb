@@ -1,7 +1,7 @@
 <div class = "page">
   <% @cuisines.each do |cuisine| %>
     <div class = "cuisine-name">
-      <%= cuisine.name %>
+      <%= link_to cuisine.name, cuisine_path(cuisine.id) %>
     </div>
   <% end %>
 </div>
